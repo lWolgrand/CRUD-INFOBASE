@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:1.17.8
+    container_name: server
+    ports:
+      - 80:80
+    volumes:
+      - ./config:/etc/nginx/conf.d
+      - ./app:/var/www
+    links:
+      - app
+  app:
+    build: "./app"
+    container_name: app
+    ports:
+      - 9000:9000
+    volumes:
+      - ./app:/var/www
+    depends_on:
+      - db
+    links:
+      - db
+      
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: gameStorage
+    ports:
+      - 5432:5432
+    volumes:
+      - ./config/db/data:/var/lib/postgresql:z
+      - ./config/db/script:/docker-entrypoint-initdb.d    
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    links:
+      - db
+# volumes:
+#   pgdata:  
