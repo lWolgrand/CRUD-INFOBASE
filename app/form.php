@@ -1,16 +1,15 @@
 <?php
 
-use App\Model\Game;
-if(isset($_POST)){
 
-    $game = new Game($_POST["name"], $_POST["plataforma"],$_POST["launch"],$_POST["price"]);
+use App\Controller\Save;
+if(isset($_POST)){
+        
+   Save::saveGame($_POST);
 }
 
-echo '<pre>';
-print_r($game);
-echo '</pre>';
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,7 @@ echo '</pre>';
 <body>
 
     <!-- //$name, $plataforma, $launch, $price -->
-    <form method="POST">
+    <form  method="POST">
         <div>
             <label for="name">Nome</label>
             <input type="text" id="name" name="nome">
