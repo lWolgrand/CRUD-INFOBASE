@@ -3,12 +3,12 @@
 require __DIR__."/vendor/autoload.php";
 use App\Model\Game;
 
-$games = [];
+// $games = [];
 
-$games[0] = new Game("GTA","PS2","10/10/2005",25);
-$games[1] = new Game("Gow","PS2","10/10/2005",30);
-$games[2] = new Game("Black","PS2","10/10/2006",30);
-$games[3] = new Game("Battlefield","PS2","10/10/2007",30);
+// $games[0] = new Game("GTA","PS2","10/10/2005",25);
+// $games[1] = new Game("Gow","PS2","10/10/2005",30);
+// $games[2] = new Game("Black","PS2","10/10/2006",30);
+// $games[3] = new Game("Battlefield","PS2","10/10/2007",30);
 
 
 ?>

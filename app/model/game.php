@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace Model;
 //criação de classe
 class Game
 {
