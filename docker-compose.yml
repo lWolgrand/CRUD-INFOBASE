@@ -12,7 +12,7 @@ services:
     links:
       - app
   app:
-    build: "./app/env_script_config"
+    build: "./app"
     container_name: app
     ports:
       - 9000:9000
