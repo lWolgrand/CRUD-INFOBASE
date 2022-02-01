@@ -42,5 +42,14 @@ services:
       - db
     links:
       - db
+  composer:
+    image: composer:latest
+    container_name: composer
+    command: "composer install"
+    volumes:
+      - ./app:/var/www
+    working_dir: /var/www
+    links:
+     - app
 # volumes:
 #   pgdata:  

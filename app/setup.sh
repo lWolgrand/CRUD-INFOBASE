@@ -1,3 +1,3 @@
 #!/bin/sh
-composer --version
+composer install -d /var/www --no-plugins --no-scripts --no-dev 
 php-fpm -F -R
