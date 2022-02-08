@@ -17,13 +17,13 @@ class Database{
         
     }
 
-    public static function save($tableName, $game){
+    public static function save($tableName, $contact){
 
-        $collums = array_keys($game);
+        $collums = array_keys($contact);
         $binds = array_pad([], count($collums), "?");
         $query = "INSERT INTO ".$tableName." (".implode(" , ", $collums).") VALUES (".implode(" , ", $binds)." )";
         try {
-           return self::$connection->prepare($query)->execute(array_values($game));
+           return self::$connection->prepare($query)->execute(array_values($contact));
         } catch (PDOException $e) {
             return $e->getMessage();
         }

@@ -19,7 +19,7 @@ class DataBaseConnection{
     private static $password;
 
     //Essa é minha função inicializadora do banco
-    private static function init($host = "db", $dbName = "gameStorage", $user = "root", $password = "root"){
+    private static function init($host = "db", $dbName = "contact", $user = "root", $password = "root"){
 
         //dentro da minha função, tenho minhas variáveis estáticas e privadas recebendo parâmetros.
         self::$host = $host;
