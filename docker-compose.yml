@@ -42,20 +42,13 @@ services:
       - db
     links:
       - db
-<<<<<<< HEAD
-
-=======
->>>>>>> fbc23ba32dfed10b44448b5878f77a48cc1b11b3
   composer:
     image: composer:latest
     container_name: composer
     command: "composer install"
     volumes:
-<<<<<<< HEAD
-     - ./app: /var/www
-=======
+      - ./app: /var/www
       - ./app:/var/www
->>>>>>> fbc23ba32dfed10b44448b5878f77a48cc1b11b3
     working_dir: /var/www
     links:
      - app
