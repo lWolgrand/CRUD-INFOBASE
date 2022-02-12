@@ -8,7 +8,6 @@ namespace App\Database;
 use \PDO;
 use \PDOException;
 
-
 //Esta é minha classe de conexão com banco
 class DataBaseConnection{
 
@@ -26,8 +25,6 @@ class DataBaseConnection{
         self::$dbName = $dbName;
         self::$user = $user;
         self::$password = $password;
-
-
     }
 
     //Essa é minha função de conexão com o banco onde é chamada a função init
@@ -36,13 +33,11 @@ class DataBaseConnection{
         $connection = NULL;
         try {
             $connection = new PDO("pgsql:host=".self::$host.";dbname=".self::$dbName, self::$user, self::$password);
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
 
         } catch (PDOException $e) {
            $connection = $e->getMessage();
         }
-
         return $connection;
 
     }
