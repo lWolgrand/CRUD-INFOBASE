@@ -1,44 +1,53 @@
 <?php
 
-require __DIR__."/vendor/autoload.php";
-use App\Model\Game;
 
-// $games = [];
-
-// $games[0] = new Game("GTA","PS2","10/10/2005",25);
-// $games[1] = new Game("Gow","PS2","10/10/2005",30);
-// $games[2] = new Game("Black","PS2","10/10/2006",30);
-// $games[3] = new Game("Battlefield","PS2","10/10/2007",30);
-
+require('methods/create.php')
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <title>Document</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Agenda de contatos</title>
+    </head>
+        <body>
+            <form action="?act=save" method="POST" name="form1" >
+                    <h1>Agenda de contatos</h1>
+                    <hr>
+                    <input type="hidden" name="id" <?php
+                // Preenche o id no campo id com um valor "value"
+                if (isset($id) && $id != null || $id != "") {
+                    echo "value=\"{$id}\"";
+                }
+                ?> />
 
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>Plataforma</th>
-            <th>Lançamento</th>
-            <th>Preço</th>
-        </tr> 
+                    Nome:
+                    <input type="text" name="nome" <?php
+                // Preenche o nome no campo nome com um valor "value"
+                if (isset($nome) && $nome != null || $nome != ""){
+                    echo "value=\"{$nome}\"";
+                }
+                ?>  />
 
-        <?php foreach($games as $game) { 
-            echo "<tr>";
-            echo "<th>".$game->name."</th>";
-            echo "<th>".$game->plataforma."</th>";
-            echo "<th>".$game->launch."</th>";
-            echo "<th>".$game->price."</th>";
-            echo "</tr>" ;
-        }               
-        
-        ?>
-    </table>
-    
-</body>
+                    E-mail:
+                    <input type="text" name="email" <?php
+                // Preenche o email no campo email com um valor "value"
+                if (isset($email) && $email != null || $email != ""){
+                    echo "value=\"{$email}\"";
+                }
+                ?> />
+
+                    Celular:
+                    <input type="text" name="celular" <?php
+                // Preenche o celular no campo celular com um valor "value"
+                if (isset($celular) && $celular != null || $celular != ""){
+                    echo "value=\"{$celular}\"";
+                }
+                ?> />
+                    <input type="submit" value="salvar" />
+                    <input type="reset" value="Novo" />
+                    <hr>
+            </form>             
+    </body>
 </html>
