@@ -1,13 +1,13 @@
-version: "3.7"
+version: "3"
 
 services:
   nginx:
-    image: nginx:1.17.8
+    image: nginx:latest
     container_name: server
     ports:
-      - 80:80
+      - 8000:8000
     volumes:
-      - ./config:/etc/nginx/conf.d
+      - ./app:/etc/nginx/conf.d
       - ./app:/var/www
     links:
       - app
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
     links:
-      - db      
+      - db    
 
   db:
     image: postgres
@@ -33,7 +33,7 @@ services:
       - 5432:5432
     volumes:
       - ./config/db/data:/var/lib/postgresql:z
-      - ./config/db/script:/docker-entrypoint-initdb.d    
+      - ${PWD}/config/db:/docker-entrypoint-initdb.d    
   adminer:
     image: adminer
     ports:
@@ -47,8 +47,7 @@ services:
     container_name: composer
     command: "composer install"
     volumes:
-      - ./app: /var/www
-      - ./app:/var/www
+      - ./app:/var/www    
     working_dir: /var/www
     links:
      - app
