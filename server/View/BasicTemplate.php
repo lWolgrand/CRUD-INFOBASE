@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View;
+namespace Server\View;
 
 class BasicTemplate
 {
@@ -13,7 +13,7 @@ class BasicTemplate
             ob_start();
             extract($vars);
             $viewName = self::getTemplateFullPath($template);
-            include self::getTemplateFullPath('templates/app.phtml');
+            include self::getTemplateFullPath('templates/template.php');
             echo ob_get_clean();
 
         }
