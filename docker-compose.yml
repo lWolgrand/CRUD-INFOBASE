@@ -31,8 +31,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./config/db/data:/var/lib/postgresql:z
-      - ${PWD}/config/db:/docker-entrypoint-initdb.d    
+      - /config/db/script:/var/lib/postgresql:z
+      - ${PWD}/config/db/script:/docker-entrypoint-initdb.d    
 
   adminer:
     image: adminer

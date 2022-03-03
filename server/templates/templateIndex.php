@@ -12,6 +12,7 @@
   <input type="text" id="fname" name="fname"><br>
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname">
+  <button type="submit">Enviar</button>
 </form>
 </body>
 </html>

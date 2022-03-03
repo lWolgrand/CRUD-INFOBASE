@@ -2,7 +2,7 @@
 
 namespace App\Http\Controller\Customer;
 
-class CreateController extends \App\Http\Controller\BaseController
+class CreateController extends \server\pp\Http\Controller\BaseController
 {
 
     public function get()

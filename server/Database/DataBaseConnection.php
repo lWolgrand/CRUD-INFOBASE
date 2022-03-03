@@ -2,11 +2,11 @@
 
 
 //No meu composer Json eu defino que este caminho é um namespace e que "App\\":"app/"
-namespace App\Database;
+namespace server\Database;
 
 //Aqui são dois imports da extensão PDO do PHP
 use \PDO;
-use \PDOException;
+use PDOException;
 
 //Esta é minha classe de conexão com banco
 class DataBaseConnection{
