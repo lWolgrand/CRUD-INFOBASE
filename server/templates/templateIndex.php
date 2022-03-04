@@ -7,11 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-<form>
-  <label for="fname">First name:</label><br>
+<form action="", method="POST">
+  <label for="fname">Name:</label><br>
   <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname">
+
+  <label for="email">email:</label><br>
+  <input type="email" id="email" name="email"><br>
+
+  <label for="telefone">telefone:</label><br>
+  <input type="cellphone" id="telefone" name="telefone">
+
   <button type="submit">Enviar</button>
 </form>
 </body>
