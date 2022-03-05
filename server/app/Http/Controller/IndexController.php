@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controller;
- 
-require_once 'model/indexmodel.php';
+
 
 class IndexController
 {

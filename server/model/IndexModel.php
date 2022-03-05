@@ -2,7 +2,7 @@
 
 namespace Server\Model;
 
-class IndexModell
+class IndexModel
 {
     function adicionar($nome, $email, $telefone) {
 
