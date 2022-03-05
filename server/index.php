@@ -2,6 +2,7 @@
 
 require __DIR__.'/vendor/autoload.php';
 use App\Bootstrap;
-$app = new Bootstrap();
+
+$app = new App\Bootstrap();
 $app->run();
 

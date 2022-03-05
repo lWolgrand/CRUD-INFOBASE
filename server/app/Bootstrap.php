@@ -7,7 +7,7 @@ namespace App;
  *
  * @package App
  */
-class Boostrap
+class Bootstrap
 {
 
     /**
