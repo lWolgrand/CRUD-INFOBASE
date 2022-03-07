@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Controller;
 
-
-class IndexController
+use App\Storage\ContactStorage;
+class IndexController extends BaseController
 {
 
     public function get()
     {
-        var_dump('Index Controller Class');
+        $storage = new ContactStorage();
+        var_dump($storage->getall());
     }
 }

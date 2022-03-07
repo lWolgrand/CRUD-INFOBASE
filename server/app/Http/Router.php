@@ -9,7 +9,7 @@ class Router {
     public function init(){ 
 
         $controllerName = $this->getRouteController();
-        echo $controllerName;
+        
         
         if(class_exists($controllerName)){
             $controller = new $controllerName;
@@ -37,10 +37,11 @@ class Router {
         $uri = str_replace('/', ' ', $uri);
         $uri = ucwords($uri);
         $uri = str_replace(' ', '\\', $uri);
-        $controller = self::BASE_CONTROLLER_NAMESPACE.'\\'.$uri.'Controller';        
+
+        $controller = self::BASE_CONTROLLER_NAMESPACE."\\{$uri}Controller";   
+            
         if($controller === self::BASE_CONTROLLER_NAMESPACE.'\\Controller') {
-            $controller === str_replace('Controller\Controller', 'Controller\IndexController', $controller);
-            var_dump($controller);
+            $controller = str_replace('Controller\Controller', 'Controller\IndexController', $controller);          
         }
         
         return $controller;

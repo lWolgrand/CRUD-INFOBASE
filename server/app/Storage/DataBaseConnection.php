@@ -2,7 +2,7 @@
 
 
 //No meu composer Json eu defino que este caminho é um namespace e que "App\\":"app/"
-namespace server\Database;
+namespace App\Storage;
 
 //Aqui são dois imports da extensão PDO do PHP
 use \PDO;
