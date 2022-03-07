@@ -28,12 +28,20 @@ class ContactStorage{
 
     }
 
-    public function getAll()    {    
+    public function getAll(){   
 
-          
         $stmt = self::$connection->query(" SELECT * FROM ".self::TABLENAME);       
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'ContactModel');
         return $stmt->fetchAll();       
+    }
+
+    public function delete(ContactModel $id){
+
+        $query = "DELETE FROM contact WHERE id = :id";
+        $this->execute($query);
+        return true;
+
+
     }
 
 }
