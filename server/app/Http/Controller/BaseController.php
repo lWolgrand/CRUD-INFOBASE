@@ -43,4 +43,8 @@ class BaseController
         {
                 return $_POST[$key] ?? null;
         }
+
+        protected function redirect(String $url){
+            header('Location', $url);
+        }
 }

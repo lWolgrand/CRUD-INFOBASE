@@ -3,7 +3,8 @@ namespace App\Http\Controller;
 
 use App\Storage\ContactStorage; 
 use App\View\BasicTemplate;
-class IndexController extends BaseController
+use App\Model\ContactModel;
+class InsertController extends BaseController
 {
 
     public function get()
@@ -11,5 +12,8 @@ class IndexController extends BaseController
         $contactStorage = new ContactStorage();
         $vars = array('title'=>'Pagina inicial', 'contacts'=> $contactStorage->getAll());
         echo BasicTemplate::view("index.phtml", $vars);
+    }
+    public function post(){
+
     }
 }

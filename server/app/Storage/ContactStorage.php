@@ -31,12 +31,9 @@ class ContactStorage{
     public function getAll()    {    
 
           
-        $stmt = self::$connection->query(" SELECT * FROM ".self::TABLENAME, PDO::FETCH_CLASS, 'ContactModel');
-         
-        var_dump($stmt);        
-        // return $stmt->fetchAll();       
-
-        
+        $stmt = self::$connection->query(" SELECT * FROM ".self::TABLENAME);       
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'ContactModel');
+        return $stmt->fetchAll();       
     }
 
 }

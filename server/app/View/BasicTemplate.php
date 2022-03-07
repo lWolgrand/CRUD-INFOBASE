@@ -1,6 +1,6 @@
 <?php
 
-namespace Server\View;
+namespace App\View;
 
 class BasicTemplate
 {
@@ -13,7 +13,7 @@ class BasicTemplate
             ob_start();
             extract($vars);
             $viewName = self::getTemplateFullPath($template);
-            include self::getTemplateFullPath('templates/template.php');
+            include self::getTemplateFullPath('templates/template.phtml');
             echo ob_get_clean();
 
         }
@@ -25,7 +25,7 @@ class BasicTemplate
          */
         private static function getTemplateFullPath(string $filename): string
         {
-                return getcwd().'/resources/view/'.$filename;
+                return getcwd().'/app/View/'.$filename;
                 
         }
 }

@@ -21,9 +21,7 @@ class ContactModel
 	 */
 	public string $telefone;
 
-	public function __construct($contact_id, $name, $email, $telefone){
-
-		$this->id = $contact_id;
+	public function __construct($name, $email, $telefone){
 		$this->name = $name;
 		$this->email = $email;
 		$this->telefone = $telefone;
