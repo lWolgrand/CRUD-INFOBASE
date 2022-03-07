@@ -19,9 +19,9 @@ class ContactStorage{
 
     public function save(ContactModel $contact){
 
-        $query = "INSERT INTO ".TABLENAME."(name, email, telefone) VALUES (?, ?, ?)";
+        $query = "INSERT INTO ".self::TABLENAME."(name, email, telefone) VALUES (?, ?, ?)";
         try {
-           return self::$connection->prepare($query)->execute($contact->name, $contact->email, $contact->telefone);
+           return self::$connection->prepare($query)->execute(array($contact->name, $contact->email, $contact->telefone));
         } catch (PDOException $e) {
             return $e->getMessage();
         }
