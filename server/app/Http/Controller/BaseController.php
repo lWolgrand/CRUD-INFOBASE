@@ -45,7 +45,8 @@ class BaseController
         }
 
         protected function redirect(String $url){
-            header('Location', $url);
+            header('Location: '.$url);  
+            exit;
             
         }
 }

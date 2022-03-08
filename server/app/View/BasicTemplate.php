@@ -10,7 +10,7 @@ class BasicTemplate
          */
         public static function view(string $template, array $vars = []):void
         {
-            ob_start();
+            ob_start();          
             extract($vars);
             $viewName = self::getTemplateFullPath($template);
             include self::getTemplateFullPath('templates/template.phtml');

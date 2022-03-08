@@ -1,8 +1,7 @@
 <?php
-
 namespace App\Storage;
-use App\Model\ContactModel;
 
+use App\Model\ContactModel;
 use \PDO;
 use \PDOException;
 
@@ -35,12 +34,31 @@ class ContactStorage{
         return $stmt->fetchAll();       
     }
 
-    public function delete(ContactModel $id){
+    public function getByID(int $id){ 
+         
+        $stmt = self::$connection->prepare(" SELECT * FROM ".self::TABLENAME." WHERE contact_id = :id");       
+        $stmt->execute(array(":id" => $id));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'ContactModel');
+        return $stmt->fetch();   
 
-        $query = "DELETE FROM contact WHERE id = :id";
-        $this->execute($query);
-        return true;
+    }
 
+    public function update(ContactModel $contact){ 
+        
+        $query = "UPDATE contact SET name = ? , email =  ? ,telefone = ? WHERE contact_id =  ?";
+        try {
+           return self::$connection->prepare($query)->execute(array($contact->name, $contact->email, $contact->telefone, $contact->contact_id));
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+
+
+    }
+
+    public function delete($id){
+        $query = "DELETE FROM ".self::TABLENAME." WHERE contact_id = :id";
+        $binds = [":id" => $id];
+        return self::$connection->prepare($query)->execute($binds);      
 
     }
 

@@ -19,7 +19,7 @@ class InsertController extends BaseController
         $contactStorage = new ContactStorage();        
         $dados = new ContactModel($this->getInput('name'),$this->getInput('email'), $this->getInput('telefone'));
         $contactStorage->save($dados);
-        return IndexController::get($contactStorage);
+        $this->redirect('/');
 
     }
 }

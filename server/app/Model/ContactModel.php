@@ -5,9 +5,9 @@ namespace App\Model;
 class ContactModel
 {
 	/**
-	 * @var integer
+	 * @var int
 	 */
-    public integer $contact_id;
+    public int $contact_id;
 	/**
 	 * @var string
 	 */
