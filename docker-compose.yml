@@ -50,7 +50,7 @@ services:
     volumes:
       - ./server:/var/www
     working_dir: /var/www
-#     links:
-#      - server
-# # volumes:
+    links:
+     - app
+# volumes:
 #   pgdata:  
