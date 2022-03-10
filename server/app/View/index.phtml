@@ -1,16 +1,17 @@
-<h1>Template base</h1>
+<?php foreach ($contacts as $contact) { ?>
 
-<?php
+<div class='card mt-4 container-fluid d-flex justify-content-center' style='width: 18rem;'>
+    <div class='card-body'>
+        <h5 class='card-title'><?php echo $contact["name"] ?></h5>
+        <h6 class='card-subtitle mb-2 text-muted'><?php echo $contact["telefone"] ?></h6>
+        <p class='card-text'><?php echo $contact["email"] ?></p>
 
+    </div>
 
-
-foreach ($contacts as $contact) {
-  
-    echo "<a  href='\delete?id={$contact["contact_id"]}'>Delete</a><br>";
-
-    echo "<a href='\\edit?id={$contact["contact_id"]}'>Edit</a><br>";
-    print "<pre>";
-    print_r($contact);
-    print "</pre>";
-}
-
+</div>
+<div class='container-fluid  d-flex justify-content-center'>
+            <a class='btn btn-danger' href='\delete?id=<?php echo $contact["contact_id"]?>'>Delete</a>
+            <br>
+            <a class='btn btn-warning' href='\edit?id=<?php echo $contact["contact_id"]?>'>Edit</a><br>
+        </div>
+<?php } ?>

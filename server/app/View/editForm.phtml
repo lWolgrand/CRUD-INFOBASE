@@ -1,10 +1,19 @@
 
 <form action="", method="POST">
-  <label for="name">Name:</label><br>
-  <input value="<?php echo $name; ?>" id="name" name="name"><br>
-  <label for="email">email:</label><br>
-  <input value="<?php echo $email; ?>" type="email" id="email" name="email"><br>
-  <label for="telefone">telefone:</label><br>
-  <input value="<?php echo $telefone; ?>" id="telefone" name="telefone">
-  <button type="submit">Enviar</button>
+  <hr />
+  <div class="container-fluid  d-flex justify-content-center">
+    <div class="row" method="POST">
+        <div class="col-md-12">
+          <label for="name">Name:</label><br>
+          <input value="<?php echo $name; ?>" id="name" name="name"><br>
+          <label for="email">email:</label><br>
+          <input value="<?php echo $email; ?>" type="email" id="email" name="email"><br>
+          <label for="telefone">telefone:</label><br>
+          <input value="<?php echo $telefone; ?>" id="telefone" name="telefone">
+          
+            <button type="submit" class="btn btn-primary">Enviar</button>          
+          
+        </div>
+    </div>
+  </div>
 </form>
