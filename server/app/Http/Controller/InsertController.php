@@ -18,6 +18,11 @@ class InsertController extends BaseController
     {     
         $contactStorage = new ContactStorage();        
         $dados = new ContactModel($this->getInput('name'),$this->getInput('email'), $this->getInput('telefone'));
+        if ( ( ! isset( $email ) || ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) && !$erro ) {
+            $erro = 'Insira um email válido.';
+        }
+        print_r($erro); 
+
         $contactStorage->save($dados);
         $this->redirect('/');
 
