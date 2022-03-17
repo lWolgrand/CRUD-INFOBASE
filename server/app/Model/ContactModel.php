@@ -22,9 +22,10 @@ class ContactModel
 	public string $telefone;
 
 	public function __construct($name, $email, $telefone){
-		$this->name = $name;
-		$this->email = $email;
-		$this->telefone = $telefone;
+		
+		$this->name = htmlspecialchars($name);
+		$this->email = htmlspecialchars($email);
+		$this->telefone = htmlspecialchars($telefone);
 		
     }
 
