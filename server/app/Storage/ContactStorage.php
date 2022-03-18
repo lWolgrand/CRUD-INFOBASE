@@ -24,6 +24,11 @@ class ContactStorage{
         } catch (PDOException $e) {
             return $e->getMessage();
         }
+        
+        $telefone = $_GET['telefone'];
+        if(!is_numeric($telefone)){
+        echo "Preencha o telefone somente com números.";
+        }
 
     }
 
